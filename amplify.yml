@@ -6,6 +6,8 @@ backend:
         - nvm use 18
         - npm ci
         - npx amplify pipeline-deploy --branch $AWS_BRANCH --appId $AWS_APP_ID
+        - cd bin && node index.mjs --appId $AWS_APP_ID --branch $AWS_BRANCH
+        - cd ..
 frontend:
   phases:
     build:
