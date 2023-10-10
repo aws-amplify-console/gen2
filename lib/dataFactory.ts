@@ -127,11 +127,22 @@ class DataGenerator implements ConstructContainerEntryGenerator {
 
     const dataAuthorizationModes = this.props.authorizationModes || {};
 
+    /* BEGIN CUSTOM CODE */
+    const stack = Stack.of(scope);
+    const backendId = stack.node.getContext('backend-id');
+    const branchName = stack.node.tryGetContext('branch-name') || 'sandbox';
+    const roleName = `amplify-cms-manage-role-${backendId}-${branchName}`;
+    const cmsManageRole = new Role(scope, 'AmplifyCMSManageRole', {
+      roleName,
+      assumedBy: new AccountPrincipal(Stack.of(scope).account),
+    });
+    /* END CUSTOM CODE */
+
     const authorizationModes: AuthorizationModes = {
       defaultAuthorizationMode,
       iamConfig,
       userPoolConfig,
-      adminRoles: [],
+      adminRoles: [cmsManageRole],
       ...dataAuthorizationModes,
     };
 
@@ -172,16 +183,7 @@ class DataGenerator implements ConstructContainerEntryGenerator {
       graphqlConstructProps
     );
 
-    /* BEGIN CUSTOM CODE */
-    const stack = Stack.of(scope);
-    const backendId = stack.node.getContext('backend-id');
-    const branchName = stack.node.tryGetContext('branch-name') || 'sandbox';
-    const roleName = `amplify-cms-manage-role-${backendId}-${branchName}`;
-    const cmsManageRole = new Role(scope, 'AmplifyCMSManageRole', {
-      roleName,
-      assumedBy: new AccountPrincipal(Stack.of(scope).account),
-    });
-
+    /* START CUSTOM CODE */
     const inlineApiPolicy = new Policy(scope, 'AmplifyCMSManageRolePolicy');
     inlineApiPolicy.addStatements(new PolicyStatement({
       effect: Effect.ALLOW,
