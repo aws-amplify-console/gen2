@@ -1,0 +1,17 @@
+{
+  "name": "generate-model-introspection-schema",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-cloudformation": "^3.427.0",
+    "@aws-sdk/client-s3": "^3.427.0",
+    "execa": "^8.0.1"
+  }
+}

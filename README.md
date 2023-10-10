@@ -21,6 +21,16 @@ Make sure the trust policy has gamma amplify service principal attached:
 }
 ```
 
+# Generate and upload Model introspection schema to s3 bucket
+```
+cd bin
+node index.mjs --appId <appId> --branch main
+```
+Note:
+- Replace appId with `test-samsara-app-${username}` for sandbox usage
+- Replace branch with sandbox for sandbox usage
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
