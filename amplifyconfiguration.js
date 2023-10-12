@@ -1,8 +1,8 @@
 const amplifyConfig = {
-  "aws_user_pools_id": "us-west-2_2Y2FIBspJ",
-  "aws_user_pools_web_client_id": "b40iegao2el82d45blfahhhid",
+  "aws_user_pools_id": "us-west-2_7Z4Gi8505",
+  "aws_user_pools_web_client_id": "51oj71rh127kbfoarl2djqcr",
   "aws_cognito_region": "us-west-2",
-  "aws_appsync_graphqlEndpoint": "https://p4ctjjo6unag7bpgv4rotpk4de.appsync-api.us-west-2.amazonaws.com/graphql",
+  "aws_appsync_graphqlEndpoint": "https://2mth6ceyrrbbtlfdqpuicw5oly.appsync-api.us-west-2.amazonaws.com/graphql",
   "aws_appsync_region": "us-west-2",
   "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
   "aws_appsync_additionalAuthenticationTypes": "AWS_IAM",
@@ -76,7 +76,9 @@ const amplifyConfig = {
     },
     "enums": {},
     "nonModels": {}
-  }
+  },
+  "aws_user_files_s3_bucket_region": "us-west-2",
+  "aws_user_files_s3_bucket": "amplify-test-samsara-app-amplifystorageamplifysto-1t1ztpsqognzq"
 }
 export default amplifyConfig;
 

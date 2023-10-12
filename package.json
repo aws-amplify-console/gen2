@@ -40,9 +40,10 @@
     ]
   },
   "devDependencies": {
-    "@aws-amplify/backend": "^0.2.0-alpha.6",
-    "@aws-amplify/backend-auth": "^0.2.0-alpha.6",
+    "@aws-amplify/backend": "^0.2.0-alpha.8",
+    "@aws-amplify/backend-auth": "^0.2.0-alpha.9",
     "@aws-amplify/backend-cli": "^0.2.0-alpha.6",
-    "@aws-amplify/backend-graphql": "^0.2.0-alpha.8"
+    "@aws-amplify/backend-graphql": "^0.2.0-alpha.9",
+    "@aws-amplify/backend-storage": "^0.2.0-alpha.7"
   }
 }
